@@ -1,0 +1,33 @@
+<app-admin-header></app-admin-header>
+<br><br><br>
+<nav class="navbar bg-body-tertiary ">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Admins List</span>
+    </div>
+</nav>
+<div class="container pt-5 table-responsive" style="margin-top: 0.5cm;">
+    <table class="table table-info table-striped">
+        <thead>
+          <tr class="table-dark" style="text-align: center ;">
+            <th scope="col">No:-</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr style="text-align:center;" *ngFor="let signup of signups; let i= index">
+              <th scope="row">{{i+1}}</th>
+              <td>{{signup.name}}</td>
+              <td>{{signup.email}}</td>
+              <td>{{signup.phonenumber}}</td>
+              <td>
+                <!-- HTML !-->
+                <button class="button-62" role="button" (click)="removeAdmin(signup._id)">Remove</button>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+</div>
+

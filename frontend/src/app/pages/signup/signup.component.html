@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="container" >
+    <form class="example-form" (ngSubmit)="onSubmit()" #userlogin="ngForm" >
+          <h1 style="text-align: center;">Sign Up</h1>
+      <div class="row"  >
+          <div class="mb-3">
+                  <div class="mb-3">
+                    <label>Name</label>
+                    <input placeholder="Type your name here !" class="form-control" name="name" [(ngModel)]="user.name"
+                    [class.is-invalid]="name.invalid && name.touched" #name="ngModel" required pattern="[a-zA-Z]+" >
+                      <div [class.d-none]="name.valid||name.untouched">Name Invalid</div>
+                  </div> 
+          </div>
+          <div class="mb-3">
+                <label>Email</label>
+                <input placeholder="abc@mail.com" type="email" class="form-control" [(ngModel)]="user.email" name="email"
+                #email="ngModel" [class.is-invalid]="email.invalid && email.touched"
+                id="exampleInputEmail1"  required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                  <div [class.d-none]="email.valid || email.untouched">Email invalid</div>
+          </div>
+          <div class="mb-3">
+                <label>Phone Number</label>
+                <input placeholder="Phone Number" type="text" (keypress)="keyPress($event)" class="form-control" name="Phonenumber" [(ngModel)]="user.phonenumber"
+                [class.is-invalid]="phonenumber.invalid && phonenumber.touched" #phonenumber="ngModel"
+                required minlength="10" maxlength="10">
+                <div [class.d-none]="phonenumber.valid||phonenumber.untouched">Phone number invalid</div>
+          </div>
+      <div class="mb-3">
+            <label>Password</label>
+            <input type="password" placeholder="********" class="form-control" [(ngModel)]="user.password"
+            name="password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%?&])[A-Za-z\d$@$!%?&]{8,}$" minlength="8">
+              <div [class.d-none]="password.valid || password.untouched">Password invalid</div> 
+      </div>
+      <div class="mb-3">
+          <button type="submit" class="btn btn-dark">Sign Up</button>&nbsp;
+          <button  class="btn btn-dark"><a routerLink="/login" style="color: white;text-decoration:none;">Log In</a></button>
+      </div>
+      </div>
+    </form>
+  </div>
+<app-footer></app-footer>

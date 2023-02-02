@@ -1,0 +1,24 @@
+<app-admin-header></app-admin-header>
+<br><br><br><br><br>
+<div class="container">
+    <!-- HTML !-->
+<button class="button-64" role="button" (click)="addcategory()"><span class="text">Add Category</span></button>
+    <br>
+    <div class="form-group">
+      <input type="text"name='searchText' placeholder="Search" [(ngModel)]="searchText" style="width: 100% ; height: 2.5em;">
+    </div><br>
+    <div class="card mb-4" *ngFor="let category of categorys |filter:searchText">
+        <div class="card-body">
+          <h4 style="color: grey;">Category: {{category.name}}</h4>
+          <br>
+          <p style="font-size: larger;"> Description: {{category.description}} </p>
+          <!-- HTML !-->
+          <!-- <small>read more...</small> -->
+          <td>
+            <button class="button-62" (click)="updatecategory(category._id)">Update</button>&nbsp;
+            <button class="button-62" (click)="deletecategory(category._id)">Delete</button>
+          </td>
+        </div>
+      </div>
+      &nbsp;
+</div>

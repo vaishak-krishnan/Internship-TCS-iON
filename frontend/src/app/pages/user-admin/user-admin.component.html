@@ -1,0 +1,58 @@
+<app-user-admin-header></app-user-admin-header>
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="height: 300px;">
+        <img src="../../../assets/images/bg4.png" class="d-block w-100" alt="..." style="opacity: 0.8;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="headcarousel">BLOGGER'S CORNER</h5>
+          <p class="expcarousel">Share your thoughts here</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="height: 300px;">
+        <img src="../../../assets/images/bg3.png" class="d-block w-100" alt="..." style="opacity: 0.8;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="headcarousel">TRAVEL BLOGS</h5>
+          <p class="expcarousel" style="color: white;">Share your travel experience</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="height: 300px;">
+        <img src="../../../assets/images/bg2.jpg" class="d-block w-100" alt="..." style="opacity: 0.8;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="headcarousel">EDUCATIONAL BLOGS</h5>
+          <p class="expcarousel">Share your knowledge with others</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="container pt-5">
+    <div class="form-group">
+      <input type="text"name='searchText' placeholder="Search" [(ngModel)]="searchText" style="width: 100% ; height: 2.5em;">
+    </div><br>
+    <div class="card mb-4" *ngFor="let post of posts |filter:searchText">
+      <div class="card-body">
+        <h4 style="color: grey;">Title: {{post.title}}</h4>
+        <i style="color: grey;">Created by: {{post.creator}}, Category: {{post.category}}, Created on: {{post.createdAt | date}}</i>
+        <br><br>
+        <p style="font-size: larger;">{{post.content}}</p>
+        <!-- HTML !-->
+      <td>
+        <button class="button-29" (click)="editPost(post._id)">Edit</button>&nbsp;
+        <button class="button-29" (click)="deletePost(post._id)">Delete</button>
+      </td>
+        <!-- <small>read more...</small> -->
+      </div>
+    </div>
+  </div>

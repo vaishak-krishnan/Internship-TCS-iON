@@ -1,0 +1,15 @@
+.nav-link {
+    color: whitesmoke;
+}
+
+.nav-item{
+    padding: 5px;
+    margin-right: 5px;
+    font-size: large;
+}
+
+.active {
+    background-color: rgb(127, 191, 255);
+    /* border-radius: 15px; */
+    font-weight: bool;
+}

@@ -1,0 +1,19 @@
+.nav-link {
+    color: whitesmoke;
+}
+.nav-item{
+    padding: 5px;
+    margin-right: 5px;
+    font-size: large;
+}
+/* .nav-item a:hover{ */
+    /* text-decoration: overline; */
+    /* color: aqua */
+    /* background-color: palevioletred; */
+/* } */
+
+.active {
+    background-color: palevioletred;
+    /* border-radius: 15px; */
+    font-weight: bool;
+}

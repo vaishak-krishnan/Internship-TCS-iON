@@ -1,0 +1,20 @@
+<app-admin-header></app-admin-header>
+<br><br><br><br><br>
+<form [formGroup]="addcategoryform" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div class="headpost">
+        <h3 style="text-align: center;">ADD CATEGORY</h3>&nbsp;
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Category</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Add Category" formControlName="name" required>
+        </div>&nbsp;
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" formControlName="description" required></textarea>
+          </div><br>
+        <div class="text-center">
+        <button type="submit" class="btn btn-warning">Add</button>
+        </div>
+    </div>
+    </form>&nbsp;
